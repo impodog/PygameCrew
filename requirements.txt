@@ -1,0 +1,4 @@
+numpy
+PyAutoGUI
+pygame
+pyperclip
