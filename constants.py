@@ -13,7 +13,7 @@ from calca.pysp import*
 import numpy as np
 
 ScreenLength,ScreenWidth=pyautogui.size()
-Pos_=Pos_Like_=SubType(Iterable,(Rational,Rational))
+Pos_=Pos_Like_=SubType(Iterable,((int,float),(int,float)))
 rgb_=SubType(Iterable,(int,int,int))
 rgb=TypeVar("rgb")
 Pos=TypeVar("Pos")
