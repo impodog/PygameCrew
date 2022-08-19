@@ -25,7 +25,7 @@ class _PyCr_Value():
         """Counter 0 - 99, refresh every get_interect() in + 1"""
     def get_interact(self,wait_mode=False):
         """WARNING: Doing this clears all the event data the pygame *should* give you."""
-        self.event=pygame.event.wait() if wait_mode else pygame.event.get()
+        self.event=(pygame.event.wait(),) if wait_mode else pygame.event.get()
         self.press=pygame.key.get_pressed()
         self.mod=pygame.key.get_mods()
         self.mouse=pygame.mouse.get_pos()
