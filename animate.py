@@ -40,6 +40,7 @@ class Frame():
     def deepcopy(self)->"Frame":return Frame(self.surf.copy(),self.position)
     def flipx(self):self.surf=pygame.transform.flip(self.surf,True,False)
     def flipy(self):self.surf=pygame.transform.flip(self.surf,False,True)
+    def get_size(self):return self.surf.get_size()
     def __pycrput__(self):ctrl.screen.blit(self.surf,self.position);return
     def __repr__(self):return "%s(surf=%s, target=%s)"%(self.__class__.__name__,repr(self.surf),self.position)
     def __str__(self):return self.__repr__()
@@ -105,6 +106,7 @@ When pos is defined, blit all frames at the given pos"""
     def chpos(self,pos:Pos=None):self.pos=pos
     def alphaall(self,a:int):
         for fr in self.frames:fr.alpha(a)
+    def get_size(self):return self.frames[0].surf.get_size()
 def Create_FrameArray(from_obj:str,position:Pos=(0,0),colorkeys:"tuple[rgb]"=None,replace_group:"dict[rgb,rgb]"=None,alpha:int=None,repeat:bool=False,framerate:float=0,pos:Pos=None):
     """
 ## Paths
